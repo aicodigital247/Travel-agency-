@@ -1,0 +1,334 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Configure Voyage Booking - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="study-abroad.html">Study</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3 active text-primary-emphasis" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item rounded py-2" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item rounded py-2" href="pricing.html">Pricing Plans</a></li>
+                <li><a class="dropdown-item rounded py-2" href="team.html">Our Experts</a></li>
+                <li><a class="dropdown-item rounded py-2" href="faq.html">FAQs Portal</a></li>
+                <li><a class="dropdown-item rounded py-2" href="gallery.html">Visual Gallery</a></li>
+                <li><a class="dropdown-item rounded py-2" href="testimonials.html">Reviews</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN BOOKING CONTAINER -->
+    <section class="py-5">
+      <div class="container py-4">
+        <div class="row g-5">
+          <!-- Step form -->
+          <div class="col-lg-8">
+            <div class="glass-card p-4">
+              <h2 class="display-5 font-display mb-4 text-color">Booking Spec Configurator</h2>
+              
+              <!-- Segment selector -->
+              <div class="row g-2 mb-4">
+                <div class="col-4 col-sm-2 text-center">
+                  <button class="btn btn-premium-link w-100 flex-column d-flex align-items-center gap-1 active py-3 rounded" data-type="flights">
+                    <i class="bi bi-airplane fs-4"></i><span class="fs-10">Flights</span>
+                  </button>
+                </div>
+                <div class="col-4 col-sm-2 text-center">
+                  <button class="btn btn-premium-link w-100 flex-column d-flex align-items-center gap-1 py-3 rounded" data-type="hotels">
+                    <i class="bi bi-building fs-4"></i><span class="fs-10">Hotels</span>
+                  </button>
+                </div>
+                <div class="col-4 col-sm-2 text-center">
+                  <button class="btn btn-premium-link w-100 flex-column d-flex align-items-center gap-1 py-3 rounded" data-type="visas">
+                    <i class="bi bi-passport fs-4"></i><span class="fs-10">Visas</span>
+                  </button>
+                </div>
+                <div class="col-4 col-sm-2 text-center">
+                  <button class="btn btn-premium-link w-100 flex-column d-flex align-items-center gap-1 py-3 rounded" data-type="tours">
+                    <i class="bi bi-compass fs-4"></i><span class="fs-10">Tours</span>
+                  </button>
+                </div>
+                <div class="col-4 col-sm-2 text-center">
+                  <button class="btn btn-premium-link w-100 flex-column d-flex align-items-center gap-1 py-3 rounded" data-type="hajj">
+                    <i class="bi bi-moon fs-4"></i><span class="fs-10">Hajj / Umrah</span>
+                  </button>
+                </div>
+              </div>
+
+              <!-- DYNAMIC FORMS container -->
+              <form id="grandMainBookingForm" onsubmit="event.preventDefault(); window.proceedToCheckoutDirect()">
+                <!-- Flight Form -->
+                <div class="booking-sub-form active-form" id="form-flights">
+                  <div class="row g-3">
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">Boarding point (From)</label>
+                      <input type="text" class="form-control custom-form-control uppercase" id="flightFromInput" value="LHR - London Heathrow" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">Target Term (To)</label>
+                      <input type="text" class="form-control custom-form-control uppercase" id="flightToInput" placeholder="E.g., CDG - Paris" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label text-color">Departure Schedule</label>
+                      <input type="date" class="form-control custom-form-control" required>
+                    </div>
+                    <div class="col-md-6">
+                      <label class="form-label text-color">Cabin Tier</label>
+                      <select class="form-select custom-form-control" id="flightCabinSelect">
+                        <option value="economy" data-adder="0">Economy Class Standard</option>
+                        <option value="business" data-adder="250">Business Executive (+ $250)</option>
+                        <option value="first" data-adder="500">First Royalty Cabin (+ $500)</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hotel Form -->
+                <div class="booking-sub-form d-none" id="form-hotels">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label text-color">Luxury Resort / Hotel Target Address</label>
+                      <input type="text" class="form-control custom-form-control" id="hotelDestInput" placeholder="E.g., ATHENA Royal Wellness Athens">
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">Check-In</label>
+                      <input type="date" class="form-control custom-form-control">
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">Check-Out</label>
+                      <input type="date" class="form-control custom-form-control">
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Visa Form -->
+                <div class="booking-sub-form d-none" id="form-visas">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label text-color">National Territory Visa Target</label>
+                      <select class="form-select custom-form-control" id="visaPlanSelect">
+                        <option value="schengen" data-rate="295">Schengen Executive Assistance - $295</option>
+                        <option value="canada" data-rate="420">Canada Experienced Entry - $420</option>
+                        <option value="uk" data-rate="350">United Kingdom Scholar Passage - $350</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Private Tours Form -->
+                <div class="booking-sub-form d-none" id="form-tours">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label text-color">Private Tour Pack Selection</label>
+                      <select class="form-select custom-form-control" id="tourSelectionPack">
+                        <option value="iceland" data-rate="1450">Icelandic Aurora Thermal Tour - $1,450</option>
+                        <option value="safari" data-rate="1850">Serengeti Premium Wild Safari - $1,850</option>
+                        <option value="greece" data-rate="1200">Athens Ancient Relics Cruiser - $1,200</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- Hajj Form -->
+                <div class="booking-sub-form d-none" id="form-hajj">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label text-color">Makkah/Madinah Sacred Pack Package</label>
+                      <select class="form-select custom-form-control" id="hajjSelectionPack">
+                        <option value="umrah-gold" data-rate="2500">Umrah Gold Suite VIP - $2,500</option>
+                        <option value="hajj-royal" data-rate="5800">Hajj Royal Platinum Chamber - $5,800</option>
+                      </select>
+                    </div>
+                  </div>
+                </div>
+
+                <div class="mt-4 pt-3 border-top">
+                  <h5 class="mb-3 font-display">Special Requests</h5>
+                  <textarea class="form-control custom-form-control" rows="2" placeholder="E.g., wheelchair assistance, dietary preference, premium lounge passes..."></textarea>
+                </div>
+
+                <button type="submit" class="btn btn-premium-primary w-100 py-3 mt-4 btn-lg">Secure Booking &amp; Checkout</button>
+              </form>
+            </div>
+          </div>
+
+          <!-- Summary card -->
+          <div class="col-lg-4">
+            <div class="sticky-top" style="top: 100px;">
+              <div class="glass-card p-4">
+                <h4 class="font-display mb-3 border-bottom pb-2">Voyage Summary</h4>
+                
+                <div class="d-grid gap-3 fs-14 pb-3 border-bottom">
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Booking Category</span>
+                    <span class="fw-semibold text-color capitalize" id="summaryCategoryText">Flights</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">Target / Details</span>
+                    <span class="fw-semibold text-color text-end" id="summaryTargetDetails">Pending Input</span>
+                  </div>
+                  <div class="d-flex justify-content-between">
+                    <span class="text-muted">System Attestation Fee</span>
+                    <span class="fw-semibold text-success">INCLUDED</span>
+                  </div>
+                </div>
+
+                <div class="d-flex justify-content-between align-items-center pt-3 mb-4">
+                  <span class="fs-5 text-muted">Estimated Total</span>
+                  <span class="fs-3 fw-bold text-primary" id="summaryTotalAmount" data-usd-val="450">$450</span>
+                </div>
+
+                <p class="fs-12 text-muted leading-sm mb-0 text-center"><i class="bi bi-shield-lock-fill me-1"></i> Form processes are completely encrypted &amp; PCI-DSS secure.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM NAVIGATION -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item active"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+
+    <script>
+      $(function() {
+        // Quick URL parsing to grab initial tab
+        const urlParams = new URLSearchParams(window.location.search);
+        let initialType = urlParams.get('type') || 'flights';
+        let initialPlan = urlParams.get('plan') || '';
+        let initialPrice = urlParams.get('price') || '';
+
+        // Preset variables if exist
+        if (initialType === 'insurance') {
+          initialType = 'visas'; // mapping insurance under visa assistance or custom display
+        }
+
+        // Click handler to toggle form fields
+        $('.btn-premium-link').on('click', function(e) {
+          e.preventDefault();
+          $('.btn-premium-link').removeClass('active');
+          $(this).addClass('active');
+
+          const type = $(this).data('type');
+          $('#summaryCategoryText').text(type);
+
+          // Reveal sub-form
+          $('.booking-sub-form').addClass('d-none').removeClass('active-form');
+          $('#form-' + type).removeClass('d-none').addClass('active-form');
+
+          updateBookingSummary();
+        });
+
+        // Specific trigger logic on target selectors
+        $('#flightCabinSelect, #visaPlanSelect, #tourSelectionPack, #hajjSelectionPack, #flightToInput, #hotelDestInput').on('input change', function() {
+          updateBookingSummary();
+        });
+
+        function updateBookingSummary() {
+          const activeBtn = $('.btn-premium-link.active');
+          const type = activeBtn.data('type');
+          let rate = 450;
+          let details = "Standard Pathway";
+
+          if (type === 'flights') {
+            const toVal = $('#flightToInput').val() || "CDG - Paris";
+            const cabinOpt = $('#flightCabinSelect option:selected');
+            const cabinAdder = parseInt(cabinOpt.data('adder')) || 0;
+            rate = 350 + cabinAdder;
+            details = "LHR ➔ " + toVal + " (" + cabinOpt.text().split('(')[0].trim() + ")";
+          } 
+          else if (type === 'hotels') {
+            const dest = $('#hotelDestInput').val() || "Atherton Premium Athens";
+            rate = 180;
+            details = dest + " Suite";
+          }
+          else if (type === 'visas') {
+            const visaOpt = $('#visaPlanSelect option:selected');
+            rate = parseInt(visaOpt.data('rate')) || 295;
+            details = visaOpt.text().split('-')[0].trim();
+          }
+          else if (type === 'tours') {
+            const tourOpt = $('#tourSelectionPack option:selected');
+            rate = parseInt(tourOpt.data('rate')) || 1200;
+            details = tourOpt.text().split('-')[0].trim();
+          }
+          else if (type === 'hajj') {
+            const hajjOpt = $('#hajjSelectionPack option:selected');
+            rate = parseInt(hajjOpt.data('rate')) || 2500;
+            details = hajjOpt.text().split('-')[0].trim();
+          }
+
+          if (initialPrice && !urlParams.get('retriggered')) {
+            rate = parseInt(initialPrice);
+            details = initialPlan ? initialPlan + " Package" : "Custom Package";
+          }
+
+          $('#summaryTotalAmount').text('$' + rate).data('usd-val', rate);
+          $('#summaryTargetDetails').text(details);
+        }
+
+        // Bootstrapping the initial page load params
+         if (initialType) {
+           $('.btn-premium-link[data-type="' + initialType + '"]').click();
+         }
+         updateBookingSummary();
+
+        // Safe redirect parameters passed down to payment panels
+        window.proceedToCheckoutDirect = function() {
+          const finalAmt = $('#summaryTotalAmount').data('usd-val') || 450;
+          const detailsStr = encodeURIComponent($('#summaryTargetDetails').text());
+          window.location.href = `checkout.html?price=${finalAmt}&details=${detailsStr}`;
+        };
+      });
+    </script>
+  </body>
+</html>

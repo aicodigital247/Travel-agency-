@@ -1,0 +1,317 @@
+/* Grand Voyage Corporate & Luxury Design - Main Style Stylesheet */
+
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Space+Grotesk:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,600;1,500&display=swap');
+
+:root {
+  --font-sans: 'Inter', sans-serif;
+  --font-display: 'Space Grotesk', sans-serif;
+  --font-serif: 'Playfair Display', serif;
+  
+  /* Primary Slate Colors */
+  --primary-color: #0c4a6e;
+  --primary-hover: #075985;
+  --accent-gold: #d97706;
+  --accent-gold-hover: #b45309;
+  
+  /* Light Theme Specifics */
+  --bg-color: #f8fafc;
+  --text-color: #0f172a;
+  --card-bg: rgba(255, 255, 255, 0.85);
+  --card-border: rgba(226, 232, 240, 0.8);
+  --card-shadow: 0 10px 30px rgba(15, 23, 42, 0.04);
+  --glass-blend: rgba(255, 255, 255, 0.7);
+  --form-bg: #ffffff;
+  --form-border: #e2e8f0;
+  --text-muted: #64748b;
+  --bg-gradient: linear-gradient(135deg, #f8fafc 0%, #f1f5f9 100%);
+}
+
+/* Dark Theme Variables override */
+[data-theme="dark"] {
+  --bg-color: #0b0f19;
+  --text-color: #f8fafc;
+  --card-bg: rgba(17, 24, 39, 0.9);
+  --card-border: rgba(255, 255, 255, 0.08);
+  --card-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+  --glass-blend: rgba(15, 23, 42, 0.65);
+  --form-bg: #1e293b;
+  --form-border: #334155;
+  --text-muted: #94a3b8;
+  --bg-gradient: linear-gradient(135deg, #0b0f19 0%, #111827 100%);
+  --primary-color: #38bdf8;
+  --primary-hover: #0ea5e9;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--bg-gradient);
+  color: var(--text-color);
+  overflow-x: hidden;
+  transition: background 0.4s ease, color 0.4s ease;
+}
+
+h1, h2, h3, h4, h5, h6, .display-font {
+  font-family: var(--font-display);
+  font-weight: 600;
+  letter-spacing: -0.02em;
+}
+
+.serif-font {
+  font-family: var(--font-serif);
+}
+
+/* Glassmorphism Elements */
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid var(--card-border);
+  border-radius: 16px;
+  box-shadow: var(--card-shadow);
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.08);
+  border-color: rgba(3, 105, 161, 0.25);
+}
+
+/* Header UI Elements */
+.navbar-brand {
+  font-family: var(--font-display);
+  font-weight: 700;
+  letter-spacing: -1px;
+}
+
+/* Form Styling & Search widget */
+.search-widget-tabs .nav-link {
+  color: var(--text-muted);
+  border: none;
+  font-weight: 500;
+  padding: 12px 20px;
+  border-radius: 8px 8px 0 0;
+  background: transparent;
+  transition: all 0.3s;
+}
+.search-widget-tabs .nav-link.active {
+  color: #fff !important;
+  background-color: var(--primary-color) !important;
+}
+
+.custom-form-control {
+  background: var(--form-bg);
+  border: 1px solid var(--form-border);
+  border-radius: 8px;
+  color: var(--text-color);
+  padding: 12px 16px;
+  transition: all 0.3s;
+}
+.custom-form-control:focus {
+  background: var(--form-bg);
+  border-color: var(--primary-color);
+  box-shadow: 0 0 0 4px rgba(3, 105, 161, 0.15);
+  color: var(--text-color);
+  outline: none;
+}
+
+/* Custom Premium Buttons */
+.btn-premium-primary {
+  background: var(--primary-color);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+.btn-premium-primary:hover {
+  background: var(--primary-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(3, 105, 161, 0.35);
+}
+
+.btn-premium-accent {
+  background: var(--accent-gold);
+  color: #ffffff;
+  font-weight: 500;
+  padding: 12px 28px;
+  border-radius: 8px;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-premium-accent:hover {
+  background: var(--accent-gold-hover);
+  color: #ffffff;
+  transform: translateY(-2px);
+  box-shadow: 0 8px 20px rgba(217, 119, 6, 0.35);
+}
+
+.btn-premium-outline {
+  background: transparent;
+  color: var(--text-color);
+  font-weight: 500;
+  padding: 11px 27px;
+  border-radius: 8px;
+  border: 2px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+.btn-premium-outline:hover {
+  background: var(--primary-color);
+  color: #ffffff;
+  border-color: var(--primary-color);
+}
+
+/* Pricing Card Designs */
+.pricing-card-badge {
+  position: absolute;
+  top: 15px;
+  right: 15px;
+  background: var(--accent-gold);
+  color: #fff;
+  font-weight: 600;
+  border-radius: 10px;
+  font-size: 11px;
+}
+
+/* Footer Section Grid styling */
+.premium-footer {
+  background: #0f172a;
+  color: #94a3b8;
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+}
+.premium-footer h5 {
+  color: #ffffff;
+  font-weight: 600;
+}
+.premium-footer a {
+  color: #94a3b8;
+  text-decoration: none;
+  transition: color 0.3s;
+}
+.premium-footer a:hover {
+  color: #f59e0b;
+}
+
+/* Social Icon Badges */
+.social-badge {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: rgba(255, 255, 255, 0.05);
+  color: #fff;
+  margin-right: 10px;
+  transition: all 0.3s;
+}
+.social-badge:hover {
+  background: var(--primary-color);
+  color: #fff;
+  transform: translateY(-3px);
+}
+
+/* Destination Cards visual styling */
+.destination-badge {
+  position: absolute;
+  top: 15px;
+  left: 15px;
+  background: rgba(15, 23, 42, 0.7);
+  backdrop-filter: blur(5px);
+  color: #ffffff;
+  padding: 6px 12px;
+  font-size: 12px;
+  font-weight: 500;
+  border-radius: 30px;
+}
+
+/* Timeline Components */
+.timeline-stem {
+  position: relative;
+  padding-left: 30px;
+  border-left: 2px solid var(--card-border);
+}
+.timeline-stem::before {
+  content: '';
+  position: absolute;
+  left: -7px;
+  top: 5px;
+  width: 12px;
+  height: 12px;
+  border-radius: 50%;
+  background: var(--primary-color);
+  border: 2px solid var(--bg-color);
+}
+
+/* Active Status Badges */
+.status-indicator {
+  display: inline-flex;
+  align-items: center;
+  font-size: 12px;
+  font-weight: 500;
+  padding: 4px 10px;
+  border-radius: 30px;
+}
+.status-approved {
+  background: rgba(34, 197, 94, 0.15);
+  color: #22c55e;
+}
+.status-pending {
+  background: rgba(245, 158, 11, 0.15);
+  color: #f59e0b;
+}
+.status-rejected {
+  background: rgba(239, 68, 68, 0.15);
+  color: #ef4444;
+}
+
+/* Hero elements specific settings */
+.hero-video-bg {
+  position: absolute;
+  right: 0;
+  bottom: 0;
+  min-width: 100%;
+  min-height: 100%;
+  width: auto;
+  height: auto;
+  z-index: -1;
+  object-fit: cover;
+  opacity: 0.15;
+}
+
+/* Sticky Bottom Navigation specifically for mobile devices */
+.mobile-bottom-nav {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: var(--card-bg);
+  backdrop-filter: blur(15px);
+  -webkit-backdrop-filter: blur(15px);
+  border-top: 1px solid var(--card-border);
+  box-shadow: 0 -5px 25px rgba(0, 0, 0, 0.05);
+  display: none;
+  z-index: 1040;
+}
+@media (max-width: 768px) {
+  .mobile-bottom-nav {
+    display: flex;
+    justify-content: space-around;
+  }
+}
+.mobile-bottom-item {
+  color: var(--text-muted);
+  font-size: 10px;
+  text-decoration: none;
+  padding: 8px 0;
+}
+.mobile-bottom-item.active {
+  color: var(--primary-color);
+}
+.mobile-bottom-item i {
+  font-size: 18px;
+}

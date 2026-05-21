@@ -1,0 +1,401 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Chamber Dashboard - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <style>
+      /* Drag and drop zone styling */
+      .dropzone-box {
+        border: 2px dashed rgba(224, 168, 0, 0.4);
+        background: rgba(224, 168, 0, 0.03);
+        border-radius: 12px;
+        text-align: center;
+        padding: 2.5rem 1.5rem;
+        transition: all 0.3s ease;
+        cursor: pointer;
+      }
+      .dropzone-box:hover, .dropzone-box.dragover {
+        border-color: var(--bs-warning);
+        background: rgba(224, 168, 0, 0.08);
+      }
+      /* Portal layout */
+      .sidebar-portal {
+        background: var(--bg-card);
+        border-right: 1px solid rgba(0,0,0,0.06);
+        min-height: calc(100vh - 80px);
+      }
+      /* Step progress visual */
+      .step-indicator {
+        position: relative;
+        display: flex;
+        justify-content: space-between;
+        margin-bottom: 2.5rem;
+      }
+      .step-indicator::before {
+        content: '';
+        position: absolute;
+        top: 24px;
+        left: 0;
+        width: 100%;
+        height: 4px;
+        background: rgba(0,0,0,0.06);
+        z-index: 1;
+      }
+      .step-progress-line {
+        position: absolute;
+        top: 24px;
+        left: 0;
+        height: 4px;
+        background: var(--bs-warning);
+        z-index: 2;
+        width: 66%;
+        transition: width 0.6s ease;
+      }
+      .step-dot {
+        width: 50px;
+        height: 50px;
+        border-radius: 50px;
+        background: var(--bg-card);
+        border: 2px solid rgba(0,0,0,0.08);
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 3;
+        transition: all 0.3s ease;
+        color: var(--text-color);
+      }
+      .step-dot.active {
+        border-color: var(--bs-warning);
+        background: var(--bs-warning);
+        color: white;
+        box-shadow: 0 0 12px rgba(224,168,0,0.4);
+      }
+      .step-dot.completed {
+        border-color: var(--bs-success);
+        background: var(--bs-success);
+        color: white;
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="study-abroad.html">Study</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3 active text-primary-emphasis" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item rounded py-2" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item rounded py-2" href="pricing.html">Pricing Plans</a></li>
+                <li><a class="dropdown-item rounded py-2" href="team.html">Our Experts</a></li>
+                <li><a class="dropdown-item rounded py-2" href="faq.html">FAQs Portal</a></li>
+                <li><a class="dropdown-item rounded py-2" href="gallery.html">Visual Gallery</a></li>
+                <li><a class="dropdown-item rounded py-2" href="testimonials.html">Reviews</a></li>
+              </ul>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn theme-toggle-btn p-2 rounded-circle border-0 text-color">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+            <a href="login.html" class="btn btn-outline-danger btn-sm px-3 border-0"><i class="bi bi-box-arrow-right me-1"></i> Log out</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- MAIN DASHBOARD CONTENT -->
+    <div class="container-fluid">
+      <div class="row">
+        <!-- Dashboard Sidebar panel -->
+        <aside class="col-md-3 sidebar-portal p-4">
+          <div class="glass-card mb-4 text-center py-4 border-0">
+            <i class="bi bi-person-circle fs-1 text-primary mb-3 d-inline-block"></i>
+            <h5 class="mb-1 text-color fw-semibold">guest@grandvoyage.com</h5>
+            <span class="badge bg-soft-warning text-warning rounded-pill px-3 fs-10 font-mono tracking-widest">VIP EXPERT MEMBER</span>
+          </div>
+
+          <div class="list-group list-group-flush gap-2 border-0">
+            <a href="#dossierPane" class="list-group-item list-group-item-action rounded border-0 py-3 active text-white" data-bs-toggle="list">
+              <i class="bi bi-clipboard2-pulse-fill me-2 fs-5"></i> Visa Dossier Progress
+            </a>
+            <a href="#documentsPane" class="list-group-item list-group-item-action rounded border-0 py-3 text-color" data-bs-toggle="list">
+              <i class="bi bi-cloud-arrow-up-fill me-2 fs-5"></i> Secure Uploads Space
+            </a>
+            <a href="#bookingsPane" class="list-group-item list-group-item-action rounded border-0 py-3 text-color" data-bs-toggle="list">
+              <i class="bi bi-airplane-fill me-2 fs-5"></i> Booking History
+            </a>
+            <a href="#chatSupportPane" class="list-group-item list-group-item-action rounded border-0 py-3 text-color" data-bs-toggle="list">
+              <i class="bi bi-chat-right-text-fill me-2 fs-5"></i> Direct Concierge Desk
+            </a>
+          </div>
+        </aside>
+
+        <!-- Main Display Content container -->
+        <main class="col-md-9 p-4">
+          <div class="tab-content">
+            <!-- DOSSIER TRACKER PANE -->
+            <div class="tab-pane fade show active" id="dossierPane" role="tabpanel">
+              <div class="glass-card p-4 mb-4">
+                <h3 class="display-font mb-4 text-color">Primary Visa Docket: SCH-7402</h3>
+                
+                <!-- Step progress tracking -->
+                <div class="step-indicator">
+                  <div class="step-progress-line"></div>
+                  <div class="step-dot completed" title="Dossier Submitted"><i class="bi bi-check-lg"></i></div>
+                  <div class="step-dot completed" title="Document Attestation"><i class="bi bi-check-lg"></i></div>
+                  <div class="step-dot active" title="Embassy Slot Filed"><i class="bi bi-building"></i></div>
+                  <div class="step-dot" title="Decision Outcome"><i class="bi bi-journal-check"></i></div>
+                </div>
+
+                <div class="row g-3 fs-14 mt-4 text-center">
+                  <div class="col-3 text-success fw-semibold">Docket Created</div>
+                  <div class="col-3 text-success fw-semibold">Attestation Clear</div>
+                  <div class="col-3 text-warning fw-semibold">Slot Appointed - MAY 28</div>
+                  <div class="col-3 text-muted">Certified Result</div>
+                </div>
+              </div>
+
+              <!-- Notifications Alert widget -->
+              <div class="alert alert-warning border-0 p-4 rounded-3 d-flex gap-3 align-items-start mb-4">
+                <i class="bi bi-exclamation-triangle-fill fs-3 text-warning mt-1"></i>
+                <div>
+                  <h5 class="alert-heading fw-bold">Supporting Financial Bank cert Required</h5>
+                  <p class="mb-0 text-muted">The embassy requests a stamped bank statement for the last 30 days to clear biometric priority approvals. Please drop the document inside the Secure Uploads Space.</p>
+                </div>
+              </div>
+            </div>
+
+            <!-- SECURE DOCUMENT UPLOAD SPACE -->
+            <div class="tab-pane fade" id="documentsPane" role="tabpanel">
+              <div class="glass-card p-4 mb-4">
+                <h3 class="display-font mb-3 text-color">Secure Upload Center</h3>
+                <p class="text-muted fs-14">Submit supporting financial certificates, employer letters, and passport photographs securely. Supported extensions: PDF, PNG, JPG (Max 15MB).</p>
+                
+                <!-- DRAG ZONE -->
+                <div class="dropzone-box" id="fileUploadDropzone" onclick="$('#realFilePicker').click()">
+                  <input type="file" id="realFilePicker" class="d-none" multiple>
+                  <i class="bi bi-cloud-arrow-up display-3 text-primary mb-3 d-inline-block"></i>
+                  <h5 class="fw-semibold mb-1 text-color">Drag &amp; drop files here</h5>
+                  <p class="text-muted fs-14 mb-0">or click to browse local folders</p>
+                </div>
+
+                <!-- Simulation progress panel -->
+                <div class="mt-4 d-none" id="uploadStatusPanel">
+                  <div class="d-flex justify-content-between align-items-center mb-2">
+                    <span class="fs-12 text-muted fw-bold" id="uploadingFileName">BankCert_May2026.pdf</span>
+                    <span class="fs-12 font-mono text-primary" id="uploadPercentageDisplay">0%</span>
+                  </div>
+                  <div class="progress" style="height: 6px;">
+                    <div class="progress-bar progress-bar-striped progress-bar-animated bg-warning" id="uploadProgressBarVisual" style="width: 0%"></div>
+                  </div>
+                </div>
+
+                <!-- Submitted lists and files -->
+                <h5 class="mt-5 mb-3 font-display text-color">Previously Logged Files</h5>
+                <div class="d-grid gap-2" id="verifiedFilesList">
+                  <div class="d-flex align-items-center justify-content-between p-3 bg-light rounded bg-opacity-10 border border-secondary border-opacity-10">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-file-earmark-pdf-fill text-danger fs-4"></i>
+                      <span class="fs-14 fw-semibold text-color">MainPassportCopy.pdf</span>
+                    </div>
+                    <span class="badge bg-soft-success text-success rounded-pill px-3 py-2">VERIFIED ATTESTED</span>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            <!-- BOOKING HISTORY PANE -->
+            <div class="tab-pane fade" id="bookingsPane" role="tabpanel">
+              <div class="glass-card p-4">
+                <h3 class="display-font mb-4 text-color">Booking Ledger</h3>
+                
+                <div class="table-responsive">
+                  <table class="table text-color align-middle">
+                    <thead>
+                      <tr>
+                        <th>Docket</th>
+                        <th>Path / Service</th>
+                        <th>Trip Date</th>
+                        <th>Rate Charge</th>
+                        <th>Payment Security</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      <tr>
+                        <td class="font-mono fs-14">#F-8292</td>
+                        <td>
+                          <div class="fw-bold">Paris Charles de Gaulle Air Transit</div>
+                          <span class="fs-12 text-muted">Carrier Flight Premium</span>
+                        </td>
+                        <td>Sep 12, 2026</td>
+                        <td class="fw-bold text-primary" data-usd-val="850">$850</td>
+                        <td><span class="badge bg-soft-success text-success fs-10">CONFIRMED SEAT</span></td>
+                      </tr>
+                    </tbody>
+                  </table>
+                </div>
+              </div>
+            </div>
+
+            <!-- CONCIERGE CHAT PORTAL -->
+            <div class="tab-pane fade" id="chatSupportPane" role="tabpanel">
+              <div class="glass-card p-4 d-flex flex-column" style="height: 500px;">
+                <div class="border-bottom pb-3 mb-3 d-flex align-items-center gap-2">
+                  <i class="bi bi-headset text-primary fs-3"></i>
+                  <div>
+                    <h5 class="mb-0 fw-bold text-color">Chambers Concierge Counselor</h5>
+                    <span class="fs-12 text-success">Online and Active now</span>
+                  </div>
+                </div>
+
+                <!-- Chat history display area -->
+                <div class="flex-grow-1 overflow-y-auto mb-3 p-2 bg-light bg-opacity-10 border border-secondary border-opacity-10 rounded d-flex flex-column gap-3" id="liveChatMessageBox">
+                  <div class="bg-soft-warning p-3 rounded-3 max-w-7xl align-self-start text-color" style="max-width: 80%;">
+                    Hello Harold! I am Alistair, your personal visa specialist counselor. How can I help you compile your bank statement certificates today?
+                  </div>
+                </div>
+
+                <!-- Input box forms -->
+                <form id="chatSubmissionForm" onsubmit="event.preventDefault(); window.sendConciergeMessage()">
+                  <div class="input-group">
+                    <input type="text" id="chatUserMessageField" class="form-control custom-form-control border-end-0" placeholder="Type message to counselor..." required>
+                    <button type="submit" class="btn btn-premium-primary px-4"><i class="bi bi-send-fill"></i></button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </main>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM NAVIGATION -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item active"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+
+    <script>
+      $(function() {
+        // Chat bot client handler
+        window.sendConciergeMessage = function() {
+          const text = $('#chatUserMessageField').val().trim();
+          if(!text) return;
+          $('#chatUserMessageField').val('');
+
+          // Append user
+          $('#liveChatMessageBox').append(
+            `<div class="bg-primary text-white p-3 rounded-3 max-w-7xl align-self-end text-end" style="max-width: 80%;">${text}</div>`
+          );
+          
+          // Auto scroll
+          $('#liveChatMessageBox').animate({ scrollTop: $('#liveChatMessageBox')[0].scrollHeight }, 200);
+
+          // Simulated delay respond
+          setTimeout(() => {
+            $('#liveChatMessageBox').append(
+              `<div class="bg-soft-warning p-3 rounded-3 max-w-7xl align-self-start text-color" style="max-width: 80%;">I have received your request regarding this. I am checking the Schengen portal now to confirm slot status.</div>`
+            );
+            $('#liveChatMessageBox').animate({ scrollTop: $('#liveChatMessageBox')[0].scrollHeight }, 200);
+          }, 1000);
+        };
+
+        // File picker and dropzone upload simulation progress bars
+        $('#realFilePicker').on('change', function(e) {
+          const files = e.target.files;
+          if(files.length > 0) {
+            simulateFileUpload(files[0].name);
+          }
+        });
+
+        // Dragover styling
+        const dropBox = $('#fileUploadDropzone');
+        dropBox.on('dragover', function(e) {
+          e.preventDefault();
+          $(this).addClass('dragover');
+        });
+        dropBox.on('dragleave', function(e) {
+          $(this).removeClass('dragover');
+        });
+        dropBox.on('drop', function(e) {
+          e.preventDefault();
+          $(this).removeClass('dragover');
+          const files = e.originalEvent.dataTransfer.files;
+          if(files.length > 0) {
+            simulateFileUpload(files[0].name);
+          }
+        });
+
+        function simulateFileUpload(name) {
+          $('#uploadingFileName').text(name);
+          $('#uploadStatusPanel').removeClass('d-none');
+          let percentage = 0;
+          
+          const interval = setInterval(() => {
+            percentage += 10;
+            $('#uploadPercentageDisplay').text(percentage + '%');
+            $('#uploadProgressBarVisual').css('width', percentage + '%');
+            
+            if(percentage >= 100) {
+              clearInterval(interval);
+              setTimeout(() => {
+                $('#uploadStatusPanel').addClass('d-none');
+                window.showToastNotification('File uploaded successfully!', 'success');
+                // Append newly uploaded file
+                $('#verifiedFilesList').append(
+                  `<div class="d-flex align-items-center justify-content-between p-3 bg-light rounded bg-opacity-10 border border-secondary border-opacity-10 animate-fade-in mt-2">
+                    <div class="d-flex align-items-center gap-2">
+                      <i class="bi bi-file-earmark-check-fill text-success fs-4"></i>
+                      <span class="fs-14 fw-semibold text-color">${name}</span>
+                    </div>
+                    <span class="badge bg-soft-warning text-warning rounded-pill px-3 py-2">PENDING ATTESTATION</span>
+                  </div>`
+                );
+              }, 400);
+            }
+          }, 150);
+        }
+      });
+    </script>
+  </body>
+</html>

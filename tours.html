@@ -1,0 +1,144 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Curated Tours &amp; Holiday Guides - Grand Voyage Premium</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2" href="index.html">
+          <i class="bi bi-globe-americas fs-3"></i>
+          <span>GRAND VOYAGE</span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto gap-1">
+            <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link active" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link" href="study-abroad.html">Study</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu">
+                <li><a class="dropdown-item" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item" href="pricing.html">Pricing</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <button class="btn theme-toggle-btn p-2 rounded-circle border-0 text-color"><i class="bi bi-moon-stars-fill theme-toggle-icon"></i></button>
+            <a href="dashboard.html" class="btn btn-outline-secondary btn-sm px-3 py-2 text-color border-0">Portal</a>
+            <a href="booking.html" class="btn btn-premium-primary btn-sm px-4">Book Trip</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER BANNER -->
+    <header class="py-5 bg-dark text-white text-center animate-gradient-bg">
+      <div class="container py-4">
+        <h1 class="display-2 font-display mb-3">Holiday &amp; Curated Tours</h1>
+        <p class="lead max-w-7xl mx-auto opacity-90">Pre-arranged packages pairing high-end wellness resorts with dynamic private local expeditions.</p>
+      </div>
+    </header>
+
+    <section class="py-5">
+      <div class="container">
+        <!-- Tour Filter Buttons linked with jquery filters -->
+        <div class="d-flex justify-content-center gap-2 mb-5">
+          <button class="btn btn-primary filter-btn px-4 active" data-filter="all">All Packages</button>
+          <button class="btn btn-outline-secondary filter-btn px-4" data-filter="europe">Europe</button>
+          <button class="btn btn-outline-secondary filter-btn px-4" data-filter="asia">Asia</button>
+          <button class="btn btn-outline-secondary filter-btn px-4" data-filter="north-america">North America</button>
+        </div>
+
+        <div class="row g-4">
+          <!-- Item 1 (Europe) -->
+          <div class="col-md-6 col-lg-4 filterable-item" data-category="europe">
+            <div class="glass-card overflow-hidden h-100 hover-zoom-img">
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?w=600" class="w-100" style="height: 240px; object-fit: cover;" />
+              <div class="p-4">
+                <h5 class="font-display">The Classic London Heights</h5>
+                <p class="text-muted">6 Days complete premium stay, personalized city bus itineraries, and high-contrast scenic landmarks.</p>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="1245">$1,245</span>
+                  <a href="booking.html?type=tour&name=London&price=1245" class="btn btn-premium-primary btn-sm">Explore Tour</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 2 (Asia) -->
+          <div class="col-md-6 col-lg-4 filterable-item" data-category="asia">
+            <div class="glass-card overflow-hidden h-100 hover-zoom-img">
+              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600" class="w-100" style="height: 240px; object-fit: cover;" />
+              <div class="p-4">
+                <h5 class="font-display">Bali Sanctuary Organic Stay</h5>
+                <p class="text-muted">8 Days tranquil premium spa resort, private coastal yoga session, and scenic rice-field trekking.</p>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="890">$890</span>
+                  <a href="booking.html?type=tour&name=Bali&price=890" class="btn btn-premium-primary btn-sm">Explore Tour</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Item 3 (North America) -->
+          <div class="col-md-6 col-lg-4 filterable-item" data-category="north-america">
+            <div class="glass-card overflow-hidden h-100 hover-zoom-img">
+              <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600" class="w-100" style="height: 240px; object-fit: cover;" />
+              <div class="p-4">
+                <h5 class="font-display">Bespoke Manhattan Skyline Tour</h5>
+                <p class="text-muted">5 Days premium suites, Broadway theater entrance pass, and private luxury SUV airport transfers.</p>
+                <div class="d-flex justify-content-between align-items-center mt-4">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="1420">$1,420</span>
+                  <a href="booking.html?type=tour&name=NewYork&price=1420" class="btn btn-premium-primary btn-sm">Explore Tour</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM NAVIGATION -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+  </body>
+</html>

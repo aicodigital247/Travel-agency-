@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Guest Registration - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body class="bg-dark align-items-center justify-content-center d-flex min-vh-100 py-5" style="background: radial-gradient(circle at top left, #1a2536, #0e141d);">
+
+    <div class="container py-4">
+      <div class="row justify-content-center w-100 m-0">
+        <div class="col-md-8 col-lg-6 max-w-7xl">
+          <div class="text-center mb-4">
+            <a href="index.html" class="d-inline-flex align-items-center gap-2 text-decoration-none text-white fs-3 mb-2">
+              <i class="bi bi-globe-americas text-warning-emphasis fs-2"></i>
+              <span class="font-display fw-bold tracking-wider">GRAND <span class="fw-light">VOYAGE</span></span>
+            </a>
+            <p class="text-muted fs-14">Chamber Portal Account Creation</p>
+          </div>
+
+          <div class="glass-card p-5 border border-secondary border-opacity-25 shadow-lg bg-dark bg-opacity-75 text-white">
+            <h3 class="font-display text-center mb-4 text-warning">Apply for Credentials</h3>
+            
+            <form onsubmit="event.preventDefault(); window.showToastNotification('Account registered successfully! Welcome to Grand Voyage.', 'success'); setTimeout(() => { window.location.href = 'dashboard.html'; }, 1000)">
+              <div class="row g-3">
+                <div class="col-sm-6">
+                  <label class="form-label fs-14 text-white-50">Legal Full Name</label>
+                  <input type="text" class="form-control bg-transparent border-secondary border-opacity-50 text-white custom-form-control" placeholder="E.g., Harold Vance" required>
+                </div>
+                <div class="col-sm-6">
+                  <label class="form-label fs-14 text-white-50">Contact Mobile Core</label>
+                  <input type="tel" class="form-control bg-transparent border-secondary border-opacity-50 text-white custom-form-control" placeholder="+44 20 ..." required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fs-14 text-white-50">Electronic Mailing Inbox</label>
+                  <input type="email" class="form-control bg-transparent border-secondary border-opacity-50 text-white custom-form-control" placeholder="client@grandvoyage.com" required>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fs-14 text-white-50">Primary Visa Target / Interest Track</label>
+                  <select class="form-select bg-transparent border-secondary border-opacity-50 text-light custom-form-control dropdown-dark" style="background-color: #121c2c;">
+                    <option class="bg-dark" value="schengen">Schengen Premium Tour</option>
+                    <option class="bg-dark" value="canada">Canada Skilled Entry</option>
+                    <option class="bg-dark" value="hajj">Hajj & Umrah Elite</option>
+                    <option class="bg-dark" value="study">UK Student Pathways</option>
+                  </select>
+                </div>
+                <div class="col-12">
+                  <label class="form-label fs-14 text-white-50">Passkey Passphrase</label>
+                  <input type="password" class="form-control bg-transparent border-secondary border-opacity-50 text-white custom-form-control" placeholder="••••••••" required>
+                </div>
+                <div class="col-12">
+                  <div class="form-check m-0 p-0 d-flex align-items-center gap-2">
+                    <input type="checkbox" class="form-check-input ms-0 mt-0" id="agreeRuleTrigger" required>
+                    <label class="form-check-label fs-12 text-color-muted" for="agreeRuleTrigger">Agree to background check, privacy policies &amp; disclosures</label>
+                  </div>
+                </div>
+                <div class="col-12 pt-2">
+                  <button type="submit" class="btn btn-premium-primary w-100 py-3">Register Dossier Account</button>
+                </div>
+              </div>
+            </form>
+          </div>
+
+          <div class="text-center mt-4">
+            <p class="text-muted fs-14">Already registered with us? <a href="login.html" class="text-warning text-decoration-none">Direct Passkey Access</a></p>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- UI/UX Native Core Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+  </body>
+</html>

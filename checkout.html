@@ -1,0 +1,241 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Secure Payment Checkout - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+    <style>
+      .payment-card-visual {
+        background: linear-gradient(135deg, #4b526d, #252a3a);
+        color: white;
+        border-radius: 16px;
+        padding: 2rem;
+        box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+        position: relative;
+        overflow: hidden;
+      }
+      .payment-card-visual::before {
+        content: '';
+        position: absolute;
+        top: -50%;
+        left: -30%;
+        width: 150%;
+        height: 150%;
+        background: radial-gradient(circle, rgba(255,255,255,0.06) 0%, transparent 70%);
+      }
+    </style>
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+      </div>
+    </nav>
+
+    <!-- CONTENT WRAPPER -->
+    <section class="py-5">
+      <div class="container max-w-7xl mx-auto py-3">
+        <div class="row g-5">
+          <!-- Form checkout billing input -->
+          <div class="col-lg-7">
+            <div class="glass-card p-4">
+              <h2 class="display-5 font-display mb-4 text-color"><i class="bi bi-lock-fill text-warning me-2 align-middle"></i>Secure Checkout</h2>
+              
+              <ul class="nav nav-pills gap-2 mb-4" id="checkoutPaymentTabs">
+                <li class="nav-item flex-fill">
+                  <button class="nav-link w-100 active border border-secondary border-opacity-10" data-method="card"><i class="bi bi-credit-card-2-front-fill me-2"></i>Credit Card</button>
+                </li>
+                <li class="nav-item flex-fill">
+                  <button class="nav-link w-100 border border-secondary border-opacity-10" data-method="crypto"><i class="bi bi-currency-bitcoin me-2"></i>Crypto Core</button>
+                </li>
+              </ul>
+
+              <form id="grandCheckoutPaymentForm" onsubmit="event.preventDefault(); window.launchSuccessTransactionAnimation()">
+                <!-- CARD DETAILS PANEL -->
+                <div class="payment-method-details" id="method-panel-card">
+                  <div class="row g-3">
+                    <div class="col-12">
+                      <label class="form-label text-color">Name on Card Holder</label>
+                      <input type="text" class="form-control custom-form-control uppercase" id="chkCardName" value="HAROLD VANCE" required>
+                    </div>
+                    <div class="col-12">
+                      <label class="form-label text-color">Account Card Number</label>
+                      <div class="input-group">
+                        <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-credit-card-2-back text-muted"></i></span>
+                        <input type="text" class="form-control custom-form-control border-start-0 font-mono" id="chkCardNumber" placeholder="4111 2222 3333 4444" required>
+                      </div>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">Expiration Code (MM/YY)</label>
+                      <input type="text" class="form-control custom-form-control font-mono" id="chkCardExpiry" placeholder="12/28" required>
+                    </div>
+                    <div class="col-sm-6">
+                      <label class="form-label text-color">CVV / Security Key</label>
+                      <input type="password" class="form-control custom-form-control font-mono" id="chkCardCVV" placeholder="•••" maxlength="3" required>
+                    </div>
+                  </div>
+                </div>
+
+                <!-- CRYPTO DETAILS PANEL -->
+                <div class="payment-method-details d-none" id="method-panel-crypto">
+                  <div class="text-center py-4 bg-light bg-opacity-10 rounded border border-warning border-opacity-25">
+                    <i class="bi bi-currency-bitcoin display-4 text-warning mb-3 d-inline-block"></i>
+                    <h5 class="text-color">Instant decentralized routing</h5>
+                    <p class="text-muted fs-14 pb-3 px-3">Scan standard BSC or ERC-20 address below to resolve processing fees instantly securely.</p>
+                    <div class="bg-white p-3 d-inline-block rounded shadow-sm">
+                      <i class="bi bi-qr-code display-1 text-dark"></i>
+                    </div>
+                    <p class="font-mono fs-12 text-muted mt-3 mb-0">Address: 0x7402...fa88</p>
+                  </div>
+                </div>
+
+                <div class="col-12 pt-4">
+                  <button type="submit" class="btn btn-premium-primary w-100 py-3 font-display btn-lg">Complete Transaction Secured</button>
+                </div>
+              </form>
+            </div>
+          </div>
+
+          <!-- Summary card right side -->
+          <div class="col-lg-5">
+            <!-- Simulated Credit Card preview -->
+            <div class="payment-card-visual mb-4">
+              <div class="d-flex justify-content-between align-items-start mb-4">
+                <i class="bi bi-cpu fs-1 text-warning"></i>
+                <i class="bi bi-globe-americas fs-2 opacity-50"></i>
+              </div>
+              <h4 class="font-mono mb-4 text-white font-display letter-spacing-lg" id="visualCardNumber">#### #### #### ####</h4>
+              <div class="d-flex justify-content-between font-mono fs-14 text-white-50">
+                <div>
+                  <span class="fs-10 d-block text-uppercase">Cardholder</span>
+                  <span id="visualCardName" class="text-white">HAROLD VANCE</span>
+                </div>
+                <div>
+                  <span class="fs-10 d-block text-uppercase">Expires</span>
+                  <span id="visualCardExpiry" class="text-white">12/28</span>
+                </div>
+              </div>
+            </div>
+
+            <div class="glass-card p-4">
+              <h4 class="font-display mb-3 border-bottom pb-2">Checkout Summary</h4>
+              <div class="d-grid gap-3 fs-14 mb-4">
+                <div class="d-flex justify-content-between">
+                  <span class="text-muted">Item / Description</span>
+                  <span class="fw-semibold text-color" id="summaryDetailsText">Schengen Legal Docket</span>
+                </div>
+                <div class="d-flex justify-content-between">
+                  <span class="text-muted">Transaction Clearing Fee</span>
+                  <span class="fw-semibold text-success">WAIVED</span>
+                </div>
+              </div>
+              <div class="d-flex justify-content-between align-items-center border-top pt-3 mb-0">
+                <span class="fs-5 text-muted">Secured Total</span>
+                <span class="fs-2 fw-bold text-primary" id="finalAmountDisplay">$295</span>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SUCCESS ANIMATION MODAL -->
+    <div class="modal fade" id="successCheckoutModal" tabindex="-1" data-bs-backdrop="static" aria-hidden="true">
+      <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content glass-card border-0 text-center p-5">
+          <div class="d-inline-flex align-items-center justify-content-center bg-soft-success text-success rounded-circle mx-auto mb-4" style="width: 80px; height: 80px;">
+            <i class="bi bi-shield-fill-check display-4"></i>
+          </div>
+          <h2 class="display-Font mb-2 text-color">Transaction Secured</h2>
+          <p class="text-muted fs-14 mb-4">Your Grand Voyage transactional receipt code <strong>#TXN-7402</strong> has been logged safely. Redirecting you to the Portal Dashboard...</p>
+          <div class="spinner-border text-primary mx-auto" role="status"><span class="visually-hidden">Loading...</span></div>
+        </div>
+      </div>
+    </div>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+
+    <script>
+      $(function() {
+        // Parse url parameters to fill checkout
+        const urlParams = new URLSearchParams(window.location.search);
+        const finalPrice = urlParams.get('price') || '295';
+        const finalDetails = urlParams.get('details') || 'Schengen Legal Counsel Assis.';
+
+        $('#finalAmountDisplay').text('$' + finalPrice);
+        $('#summaryDetailsText').text(decodeURIComponent(finalDetails));
+
+        // Format Credit Card input on keyup
+        $('#chkCardNumber').on('input', function() {
+          let val = $(this).val().replace(/\D/g, '');
+          let formatted = val.match(/.{1,4}/g)?.join(' ') || '';
+          $(this).val(formatted.substring(0, 19));
+          $('#visualCardNumber').text(formatted || '#### #### #### ####');
+        });
+
+        $('#chkCardName').on('input', function() {
+          const val = $(this).val();
+          $('#visualCardName').text(val.toUpperCase() || 'HAROLD VANCE');
+        });
+
+        $('#chkCardExpiry').on('input', function() {
+          let val = $(this).val().replace(/\D/g, '');
+          if(val.length > 2) {
+            val = val.substring(0,2) + '/' + val.substring(2,4);
+          }
+          $(this).val(val.substring(0, 5));
+          $('#visualCardExpiry').text(val || '12/28');
+        });
+
+        // Toggle payment systems tabs
+        $('#checkoutPaymentTabs button').on('click', function(e) {
+          e.preventDefault();
+          $('#checkoutPaymentTabs button').removeClass('active');
+          $(this).addClass('active');
+
+          const method = $(this).data('method');
+          $('.payment-method-details').addClass('d-none');
+          $('#method-panel-' + method).removeClass('d-none');
+
+          if(method === 'crypto') {
+            $('#chkCardName, #chkCardNumber, #chkCardExpiry, #chkCardCVV').removeAttr('required');
+          } else {
+            $('#chkCardName, #chkCardNumber, #chkCardExpiry, #chkCardCVV').attr('required', 'required');
+          }
+        });
+
+        // Launch transaction success modal
+        window.launchSuccessTransactionAnimation = function() {
+          const successModal = new bootstrap.Modal(document.getElementById('successCheckoutModal'));
+          successModal.show();
+          setTimeout(() => {
+            window.location.href = 'dashboard.html';
+          }, 2000);
+        };
+      });
+    </script>
+  </body>
+</html>

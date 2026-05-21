@@ -1,0 +1,506 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Grand Voyage - Premium International Travel & Visa Terminal</title>
+    <!-- Open Graph SEO Metadata -->
+    <meta name="description" content="Luxury International travel agency offering world-class fly bookings, hotel stays, study abroad consulting, and certified fast visa processing portals." />
+    <meta property="og:title" content="Grand Voyage - Elite Travel Agency & Visa Specialists" />
+    <meta property="og:description" content="Secure flights, high-end wellness resorts, and express global visa consulting under one unified terminal." />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1488646953014-85cb44e25828?w=1200" />
+    <meta name="twitter:card" content="summary_large_image" />
+    
+    <!-- External CSS Resources -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    
+    <!-- Custom Layout Style Sheets -->
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container">
+      <div class="scroll-progress-bar"></div>
+    </div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+        
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar" aria-controls="grandNavbar" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+            <li class="nav-item"><a class="nav-link px-3 active" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="study-abroad.html">Study</a></li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Pages
+              </a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item rounded py-2" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item rounded py-2" href="pricing.html">Pricing Plans</a></li>
+                <li><a class="dropdown-item rounded py-2" href="team.html">Our Experts</a></li>
+                <li><a class="dropdown-item rounded py-2" href="faq.html">FAQs Portal</a></li>
+                <li><a class="dropdown-item rounded py-2" href="gallery.html">Visual Gallery</a></li>
+                <li><a class="dropdown-item rounded py-2" href="testimonials.html">Reviews</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item rounded py-2 text-danger" href="error.html">404 Error Page</a></li>
+              </ul>
+            </li>
+            
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+                Journals
+              </a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="blog.html">Lounge News</a></li>
+                <li><a class="dropdown-item rounded py-2" href="blog-details.html">Article Details</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+          </ul>
+
+          <!-- Auxiliary controls: Currency, Light Mode, Portal buttons -->
+          <div class="d-flex align-items-center gap-3">
+            <select id="global-currency-selector" class="form-select form-select-sm border-0 bg-transparent text-color font-mono" style="width: auto; cursor: pointer;">
+              <option value="USD" selected>USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+              <option value="CAD">CAD (C$)</option>
+            </select>
+            
+            <!-- Dark Mode Toggle Button -->
+            <button class="btn theme-toggle-btn p-2 rounded-circle border-0 text-color" aria-label="Toggle Theme">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+            
+            <a href="dashboard.html" class="btn btn-outline-secondary btn-sm px-3 py-2 text-color border-0 font-display">
+              <i class="bi bi-person-circle fs-5 me-2 align-middle"></i>Portal
+            </a>
+            
+            <a href="booking.html" class="btn btn-premium-primary btn-sm px-4">Book Trip</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- FULLSCREEN HERO HEADER SECTION -->
+    <header class="position-relative overflow-hidden w-100 min-vh-100 d-flex align-items-center justify-content-center animate-gradient-bg py-5">
+      <!-- Ambient Simulated Video Overlay (using smooth CSS overlays) -->
+      <div class="position-absolute top-0 start-0 w-100 h-100" style="background: radial-gradient(circle, rgba(15,23,42,0.1) 0%, rgba(15,23,42,0.85) 100%); z-index:0;"></div>
+      
+      <div class="container overflow-hidden position-relative z-1 text-center py-5 text-white">
+        <h1 class="display-1 font-display tracking-tight text-white mb-3 text-shadow animate-float">
+          Premium Travel &amp; <span class="typing-container text-warning">Visa Processing</span>
+        </h1>
+        <p class="lead serif-font fs-3 text-light font-light max-w-7xl mx-auto mb-5 opacity-90">
+          Discover certified fast visas, high-fidelity luxury flight deals, and bespoke study abroad pathways.
+        </p>
+
+        <!-- Dynamic Integrated Search Widget Form -->
+        <div class="search-widget-container container max-w-7xl px-mobile-sm position-relative mt-5 z-2 text-start">
+          <div class="glass-card p-4 rounded-4 shadow-lg" style="background: rgba(15, 23, 42, 0.45); border: 1px solid rgba(255,255,255,0.15)">
+            <ul class="nav nav-tabs search-widget-tabs border-0 bg-transparent mb-3 justify-content-center justify-content-lg-start gap-2" id="searchWidgetTabs" role="tablist">
+              <li class="nav-item" role="presentation">
+                <button class="nav-link active rounded-3 px-4" id="flights-tab" data-bs-toggle="tab" data-bs-target="#flights-panel" type="button" role="tab" aria-selected="true">
+                  <i class="bi bi-airplane-fill me-2"></i>Flight Finder
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-3 px-4" id="visas-tab" data-bs-toggle="tab" data-bs-target="#visas-panel" type="button" role="tab" aria-selected="false">
+                  <i class="bi bi-passport-fill me-2"></i>Visa Diagnostics
+                </button>
+              </li>
+              <li class="nav-item" role="presentation">
+                <button class="nav-link rounded-3 px-4" id="hotels-tab" data-bs-toggle="tab" data-bs-target="#hotels-panel" type="button" role="tab" aria-selected="false">
+                  <i class="bi bi-building-fill me-2"></i>Hotel Lodging
+                </button>
+              </li>
+            </ul>
+
+            <div class="tab-content" id="searchWidgetTabsContent">
+              <!-- Flights Search Panel -->
+              <div class="tab-pane fade show active" id="flights-panel" role="tabpanel" aria-labelledby="flights-tab">
+                <form id="flight-search-form" class="row g-3">
+                  <div class="col-md-3">
+                    <label for="flight-from" class="form-label text-light fs-13">From (Port of Departure)</label>
+                    <input type="text" id="flight-from" class="form-control custom-form-control text-white border-white-50 bg-dark-50" placeholder="e.g. London (LHR)" value="London" required />
+                  </div>
+                  <div class="col-md-3">
+                    <label for="flight-to" class="form-label text-light fs-13">To (Destination)</label>
+                    <input type="text" id="flight-to" class="form-control custom-form-control text-white border-white-50 bg-dark-50" placeholder="e.g. New York (JFK)" value="New York" required />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="flight-date" class="form-label text-light fs-13">Departure Date</label>
+                    <input type="date" id="flight-date" class="form-control custom-form-control text-white border-white-50 bg-dark-50" required />
+                  </div>
+                  <div class="col-md-2">
+                    <label for="flight-class" class="form-label text-light fs-13">Cabin Class</label>
+                    <select id="flight-class" class="form-select custom-form-control text-white border-white-50 bg-dark">
+                      <option value="economy" selected>Economy</option>
+                      <option value="business">Business</option>
+                      <option value="first">First Class</option>
+                    </select>
+                  </div>
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button type="submit" class="btn btn-premium-accent w-100 py-3">
+                      <i class="bi bi-search me-2"></i>Find Flights
+                    </button>
+                  </div>
+                </form>
+              </div>
+
+              <!-- Visa Tracking Diagnostics -->
+              <div class="tab-pane fade" id="visas-panel" role="tabpanel" aria-labelledby="visas-tab">
+                <form id="visa-tracker-form" class="row g-3">
+                  <div class="col-md-8">
+                    <label for="visa-badge-input" class="form-label text-light fs-13">Application File Reference ID</label>
+                    <input type="text" id="visa-badge-input" class="form-control custom-form-control text-white border-white-50 bg-dark-50" placeholder="Enter Registration Badge Number, e.g., V2026-K48X" />
+                  </div>
+                  <div class="col-md-4 d-flex align-items-end">
+                    <button type="submit" class="btn btn-premium-primary w-100 py-3">
+                      <i class="bi bi-search me-2"></i>Track Application
+                    </button>
+                  </div>
+                </form>
+                <div id="visa-tracking-results"></div>
+              </div>
+
+              <!-- Hotel Search Panel -->
+              <div class="tab-pane fade" id="hotels-panel" role="tabpanel" aria-labelledby="hotels-tab">
+                <form id="hotel-search-form" class="row g-3">
+                  <div class="col-md-4">
+                    <label class="form-label text-light fs-13">Destination City / Resort Name</label>
+                    <input type="text" class="form-control custom-form-control text-white border-white-50 bg-dark" placeholder="e.g. Bali, Indonesia" />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label text-light fs-13">Check In</label>
+                    <input type="date" class="form-control custom-form-control text-white border-white-50 bg-dark" />
+                  </div>
+                  <div class="col-md-3">
+                    <label class="form-label text-light fs-13">Guests Count</label>
+                    <input type="number" class="form-control custom-form-control text-white border-white-50 bg-dark" min="1" max="10" placeholder="1 Guest" />
+                  </div>
+                  <div class="col-md-2 d-flex align-items-end">
+                    <button type="button" class="btn btn-premium-accent w-100 py-3" onclick="showToastNotification('Hotel booking simulated successfully!','success')">
+                      <i class="bi bi-search me-2"></i>Check Rooms
+                    </button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </header>
+
+    <!-- INTERACTIVE RESULTS HOVER WINDOW -->
+    <section class="py-5" id="dynamic-results-section">
+      <div class="container" id="flight-results-box">
+        <!-- Live AJAX Search results populated on form search -->
+      </div>
+    </section>
+
+    <!-- VISA SERVICES SHOWCASE -->
+    <section class="py-5 reveal-fade-in" id="services">
+      <div class="container py-4">
+        <div class="text-center max-w-7xl mx-auto mb-5">
+          <span class="badge bg-soft-primary text-primary px-3 py-2 rounded-pill font-mono border mb-3">AUTHORIZED PATHWAYS</span>
+          <h2 class="display-3 font-display">Fast-Track Express Visa Assistance</h2>
+          <p class="text-muted leading">Select from certified travel and work schemes, backed by document audits and appointment guidance.</p>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <!-- Visa Scheme Card 1 -->
+          <div class="col-md-4">
+            <div class="glass-card h-100 p-4 position-relative">
+              <div class="avatar bg-soft-primary p-3 rounded-4 fit-content mb-4" style="background-color: rgba(12, 74, 110, 0.1)">
+                <i class="bi bi-person-workspace fs-3 text-primary"></i>
+              </div>
+              <h4 class="mb-3 display-font">Express Work Permits</h4>
+              <p class="text-muted">Certified work entry documentation support for employers and specialists targeting major economic corridors.</p>
+              <ul class="list-unstyled mb-4 text-muted gap-2 d-grid">
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>LMIA, Skilled Work entries</li>
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>Corporate relocation paths</li>
+              </ul>
+              <a href="visa-services.html" class="btn btn-premium-outline btn-sm w-100 mt-auto">See Work Permits</a>
+            </div>
+          </div>
+
+          <!-- Visa Scheme Card 2 -->
+          <div class="col-md-4">
+            <div class="glass-card h-100 p-4 position-relative">
+              <span class="pricing-card-badge px-3 py-1">POPULAR</span>
+              <div class="avatar bg-soft-warning p-3 rounded-4 fit-content mb-4" style="background-color: rgba(217, 119, 6, 0.1)">
+                <i class="bi bi-mortarboard-fill fs-3 text-warning-emphasis"></i>
+              </div>
+              <h4 class="mb-3 display-font">Study Visa Portals</h4>
+              <p class="text-muted">Admission assistance coupled with complete academic file checks across accredited universities.</p>
+              <ul class="list-unstyled mb-4 text-muted gap-2 d-grid">
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>Full Admission processing</li>
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>Post-grad work permit support</li>
+              </ul>
+              <a href="study-abroad.html" class="btn btn-premium-outline btn-sm w-100 mt-auto">Details on Study</a>
+            </div>
+          </div>
+
+          <!-- Visa Scheme Card 3 -->
+          <div class="col-md-4">
+            <div class="glass-card h-100 p-4 position-relative">
+              <div class="avatar bg-soft-success p-3 rounded-4 fit-content mb-4" style="background-color: rgba(34, 197, 94, 0.1)">
+                <i class="bi bi-compass-fill fs-3 text-success"></i>
+              </div>
+              <h4 class="mb-3 display-font">Tourist Schengen &amp; USA</h4>
+              <p class="text-muted">Speedy appointments, documentation audits, and checklist generation for general tourist applications.</p>
+              <ul class="list-unstyled mb-4 text-muted gap-2 d-grid">
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>Schengen appointments guaranteed</li>
+                <li><i class="bi bi-patch-check-fill text-success me-2"></i>Detailed interview coaching</li>
+              </ul>
+              <a href="visa-services.html" class="btn btn-premium-outline btn-sm w-100 mt-auto">View Schengen Tours</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRAVEL STATISTICS COUNTERS TRIGGER -->
+    <section class="py-5 bg-dark text-white counters-trigger reveal-fade-in" style="background: linear-gradient(135deg, #0f172a 0%, #1e293b 100%);">
+      <div class="container py-4">
+        <div class="row text-center g-4">
+          <div class="col-md-3">
+            <i class="bi bi-people fs-2 text-warning d-block mb-2"></i>
+            <h3 class="display-3 fw-bold count-up-stat stat-counter" data-target="15400" data-suffix="+">0</h3>
+            <p class="text-muted font-display mb-0">Satisfied Applicants</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-building-check fs-2 text-warning d-block mb-2"></i>
+            <h3 class="display-3 fw-bold count-up-stat stat-counter" data-target="98" data-suffix="%">0</h3>
+            <p class="text-muted font-display mb-0">Visa Success Approvals</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-airplane-fill fs-2 text-warning d-block mb-2"></i>
+            <h3 class="display-3 fw-bold count-up-stat stat-counter" data-target="45" data-suffix="+">0</h3>
+            <p class="text-muted font-display mb-0">Global Partners &amp; Hubs</p>
+          </div>
+          <div class="col-md-3">
+            <i class="bi bi-trophy-fill fs-2 text-warning d-block mb-2"></i>
+            <h3 class="display-3 fw-bold count-up-stat stat-counter" data-target="12" data-suffix="">0</h3>
+            <p class="text-muted font-display mb-0">Corporate Travel Awards</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- POPULAR DESTINATIONS SLIDER -->
+    <section class="py-5 reveal-fade-in" id="destinations">
+      <div class="container py-4">
+        <div class="row align-items-center mb-5">
+          <div class="col-md-8">
+            <span class="badge bg-soft-primary text-primary px-3 py-2 rounded-pill font-mono border mb-3">CURATED DESTINATIONS</span>
+            <h2 class="display-3 font-display">Aesthetic Travel Portals &amp; Packages</h2>
+          </div>
+          <div class="col-md-4 text-md-end">
+            <a href="tours.html" class="btn btn-premium-outline">Explore Curated Guides</a>
+          </div>
+        </div>
+
+        <div class="row g-4 mt-2">
+          <!-- Card Item 1 -->
+          <div class="col-md-4 filterable-item" data-category="europe">
+            <div class="glass-card h-100 overflow-hidden position-relative hover-zoom-img">
+              <span class="destination-badge">EUROPEAN SANCTUARIES</span>
+              <img src="https://images.unsplash.com/photo-1513635269975-59663e0ca1ad?w=600&auto=format&fit=crop&q=60" alt="London" class="w-100 object-fit" style="height: 250px;" loading="lazy" />
+              <div class="p-4">
+                <div class="d-flex justify-content-between mb-1">
+                  <h4 class="mb-0 fs-5 font-display text-color">The Classic London Getaway</h4>
+                  <div class="text-warning text-xs d-flex align-items-center"><i class="bi bi-star-fill me-1"></i>4.9</div>
+                </div>
+                <p class="text-muted border-bottom pb-3">6 Days hotel + complete West-End tickets included.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="1245">$1,245</span>
+                  <a href="booking.html?destination=London&price=1245" class="btn btn-premium-primary btn-sm px-3">Fly Elite</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Item 2 -->
+          <div class="col-md-4 filterable-item" data-category="asia">
+            <div class="glass-card h-100 overflow-hidden position-relative hover-zoom-img">
+              <span class="destination-badge">ASIA COASTAL RETREAT</span>
+              <img src="https://images.unsplash.com/photo-1537996194471-e657df975ab4?w=600&auto=format&fit=crop&q=60" alt="Bali" class="w-100 object-fit" style="height: 250px;" loading="lazy" />
+              <div class="p-4">
+                <div class="d-flex justify-content-between mb-1">
+                  <h4 class="mb-0 fs-5 font-display text-color">Bespoke Wellness in Bali</h4>
+                  <div class="text-warning text-xs d-flex align-items-center"><i class="bi bi-star-fill me-1"></i>4.8</div>
+                </div>
+                <p class="text-muted border-bottom pb-3">8 Days infinity pools, complete organic breakfast packages.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="890">$890</span>
+                  <a href="booking.html?destination=Bali&price=890" class="btn btn-premium-primary btn-sm px-3">Fly Elite</a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card Item 3 -->
+          <div class="col-md-4 filterable-item" data-category="north-america">
+            <div class="glass-card h-100 overflow-hidden position-relative hover-zoom-img">
+              <span class="destination-badge">NORTH AMERICA</span>
+              <img src="https://images.unsplash.com/photo-1496442226666-8d4d0e62e6e9?w=600&auto=format&fit=crop&q=60" alt="New York" class="w-100 object-fit" style="height: 250px;" loading="lazy" />
+              <div class="p-4">
+                <div class="d-flex justify-content-between mb-1">
+                  <h4 class="mb-0 fs-5 font-display text-color">Manhattan skyline luxury stay</h4>
+                  <div class="text-warning text-xs d-flex align-items-center"><i class="bi bi-star-fill me-1"></i>4.9</div>
+                </div>
+                <p class="text-muted border-bottom pb-3">5 Days premium suites downtown, private airport pickup.</p>
+                <div class="d-flex justify-content-between align-items-center">
+                  <span class="fs-4 fw-bold text-primary" data-usd-val="1420">$1,420</span>
+                  <a href="booking.html?destination=NewYork&price=1420" class="btn btn-premium-primary btn-sm px-3">Fly Elite</a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TESTIMONIALS SLIDER SECTION -->
+    <section class="py-5 bg-light-soft reveal-fade-in" id="testimonials">
+      <div class="container py-4">
+        <h2 class="display-3 font-display text-center mb-5">Trusted by Corporate Leaders</h2>
+        <div class="row justify-content-center">
+          <div class="col-md-8 text-center">
+            <!-- Testimonial carousel -->
+            <div id="testimonialCarousel" class="carousel slide" data-bs-ride="carousel">
+              <div class="carousel-inner">
+                <div class="carousel-item active">
+                  <div class="glass-card p-5" style="border: none;">
+                    <p class="lead serif-font fs-3 text-muted mb-4 italic">
+                      "Grand Voyage processed my Canadian Express Entry documents flawlessly. Within weeks I had completed files uploaded and approved."
+                    </p>
+                    <div class="d-flex align-items-center justify-content-center gap-3">
+                      <img src="https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=60&auto=format&fit=crop&q=60" alt="Client User" class="rounded-circle" style="width: 50px; height: 50px;" />
+                      <div class="text-start">
+                        <h6 class="mb-0 fw-bold">Sarah Jenkins</h6>
+                        <small class="text-muted">Marketing Lead, Vaynertech</small>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+                <!-- Slide 2 -->
+                <div class="carousel-item2 bootstrap-dummy"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- NEWSLETTER AND CTA BANNER -->
+    <section class="py-5 bg-primary text-white text-center reveal-fade-in" style="background: linear-gradient(135deg, #0284c7 0%, #0369a1 100%);">
+      <div class="container py-4">
+        <h2 class="display-2 font-display mb-3 text-white">Unlock Live Deal Alerts</h2>
+        <p class="lead serif-font text-light opacity-90 mb-4 max-w-7xl mx-auto">Get exclusive, non-public flight rates and premium visa update notifications directly in your terminal inbox.</p>
+        <form class="d-flex flex-column flex-sm-row gap-2 justify-content-center max-w-7xl mx-auto" style="max-width: 500px;" onsubmit="event.preventDefault(); window.showToastNotification('Subscription successfully verified!', 'success')">
+          <input type="email" class="form-control custom-form-control text-dark border-0 bg-white" placeholder="Enter your business email" required />
+          <button type="submit" class="btn btn-premium-accent">Subscribes</button>
+        </form>
+      </div>
+    </section>
+
+    <!-- SYSTEM ALIGNED MULTI-COLUMN PREMIUM FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4">
+        <div class="row g-4">
+          <div class="col-md-3">
+            <h5 class="mb-4 text-white">GRAND VOYAGE</h5>
+            <p class="fs-14">Aesthetic luxury travel specialists providing fast global visa approvals, secure flights booking, and premium hotel bookings.</p>
+            <div class="d-flex gap-2 mt-3">
+              <a href="#" class="social-badge"><i class="bi bi-facebook"></i></a>
+              <a href="#" class="social-badge"><i class="bi bi-instagram"></i></a>
+              <a href="#" class="social-badge"><i class="bi bi-linkedin"></i></a>
+            </div>
+          </div>
+          <div class="col-md-3">
+            <h5 class="mb-4 text-white">Services Offered</h5>
+            <ul class="list-unstyled d-grid gap-2 fs-14">
+              <li><a href="visa-services.html">Global Visas Assistance</a></li>
+              <li><a href="flights.html">Flight Bookings</a></li>
+              <li><a href="hotels.html">Hotel Stay Reservations</a></li>
+              <li><a href="study-abroad.html">Study Abroad Consulting</a></li>
+              <li><a href="insurance.html">Travel Health Insurance</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="mb-4 text-white">Key Resources</h5>
+            <ul class="list-unstyled d-grid gap-2 fs-14">
+              <li><a href="faq.html">FAQs Portal</a></li>
+              <li><a href="pricing.html">Pricing Structure</a></li>
+              <li><a href="gallery.html">Travel Gallery</a></li>
+              <li><a href="privacy.html">Privacy Protections</a></li>
+              <li><a href="terms.html">Terms of Service</a></li>
+            </ul>
+          </div>
+          <div class="col-md-3">
+            <h5 class="mb-4 text-white">Corporate Contacts</h5>
+            <address class="fs-14 lh-lg">
+              <i class="bi bi-geo-alt-fill me-2 text-warning"></i> Elite Terminal Chambers, Floor 14, London<br>
+              <i class="bi bi-envelope-fill me-2 text-warning"></i> reservations@grandvoyage.com<br>
+              <i class="bi bi-telephone-fill me-2 text-warning"></i> +44 207 946 0888
+            </address>
+          </div>
+        </div>
+        <hr class="border-secondary-subtle my-4">
+        <div class="row fs-13 align-items-center">
+          <div class="col-md-6 text-center text-md-start">
+            <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+          </div>
+          <div class="col-md-6 text-center text-md-end">
+            <span class="text-white-50"><i class="bi bi-shield-lock-fill text-warning me-2"></i>Fully secure terminal integration</span>
+          </div>
+        </div>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM BUTTONS FOR MOBILE DEVICES -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item active"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <!-- Floating WhatsApp chat system -->
+    <a href="https://wa.me/442079460888" target="_blank" class="whatsapp-chat-float">
+      <i class="bi bi-whatsapp fs-2"></i>
+      <span class="whatsapp-badge">2</span>
+    </a>
+
+    <!-- UI/UX Native Core Scripts -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+  </body>
+</html>

@@ -1,0 +1,152 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Service Pricing Plans - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="study-abroad.html">Study</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3 active text-primary-emphasis" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item rounded py-2" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item rounded py-2 active" href="pricing.html">Pricing Plans</a></li>
+                <li><a class="dropdown-item rounded py-2" href="team.html">Our Experts</a></li>
+                <li><a class="dropdown-item rounded py-2" href="faq.html">FAQs Portal</a></li>
+                <li><a class="dropdown-item rounded py-2" href="gallery.html">Visual Gallery</a></li>
+                <li><a class="dropdown-item rounded py-2" href="testimonials.html">Reviews</a></li>
+              </ul>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER -->
+    <header class="py-5 bg-dark text-white text-center animate-gradient-bg">
+      <div class="container py-4">
+        <h1 class="display-2 font-display mb-3">Service Pricing Matrix</h1>
+        <p class="lead max-w-7xl mx-auto opacity-90">Honest pricing without hidden fees. Choose premium consulting or automated self-file assistance packs.</p>
+      </div>
+    </header>
+
+    <!-- PRICING SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <!-- Billing Toggle switch -->
+        <div class="d-flex justify-content-center align-items-center gap-3 mb-5">
+          <span class="fs-14 fw-semibold text-color">Single Filing</span>
+          <div class="form-check form-switch p-0 m-0 cursor-pointer">
+            <input class="form-check-input ms-0 border-primary" style="width: 3.5rem; height: 1.8rem; cursor: pointer;" type="checkbox" id="pricingCycleToggle">
+          </div>
+          <span class="fs-14 fw-semibold text-color d-flex align-items-center gap-2">Corporate Annual Package <span class="badge bg-soft-success text-success fs-10 rounded-pill">SAVE 20%</span></span>
+        </div>
+
+        <div class="row g-4 justify-content-center">
+          <!-- Plan 1 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100 d-flex flex-column text-center">
+              <h5 class="font-display text-muted text-uppercase tracking-wider fs-12 mb-2">SELF GUIDED</h5>
+              <h3 class="display-font">Draft & Submit</h3>
+              <p class="text-muted fs-14">Ideal for savvy travellers needing immediate checklist templates & automated error-testing routines.</p>
+              <div class="my-4">
+                <span class="display-4 font-display text-color price-display fw-bold" data-single="95" data-annual="79">$95</span>
+                <span class="text-muted block-display mt-1 font-mono fs-12">per application</span>
+              </div>
+              <ul class="list-unstyled text-muted text-start d-grid gap-3 mb-5 fs-14 flex-grow-1">
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Schengen Standard Document checklist</li>
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Automated AI PDF validator</li>
+                <li><i class="bi bi-x text-danger me-2 fs-5 align-middle"></i>No legal advisor review</li>
+              </ul>
+              <a href="booking.html?plan=draft&price=95" class="btn btn-outline-secondary w-100 py-3 font-display">Get Self Pack</a>
+            </div>
+          </div>
+
+          <!-- Plan 2 -->
+          <div class="col-md-6 col-lg-4">
+            <div class="glass-card p-4 h-100 d-flex flex-column text-center border-primary border-2 relative">
+              <span class="badge bg-primary text-white position-absolute top-0 start-50 translate-middle px-3 py-2 rounded-pill fs-12">MOST FAVORITE</span>
+              <h5 class="font-display text-primary text-uppercase tracking-wider fs-12 mb-2 mt-2">VIP ASSISTANCE</h5>
+              <h3 class="display-font">Executive Counsel</h3>
+              <p class="text-muted fs-14">Completely hands-off visa execution. Certified legal desk reviews, sets appointments, and manages filings.</p>
+              <div class="my-4">
+                <span class="display-4 font-display text-color price-display fw-bold" data-single="295" data-annual="236">$295</span>
+                <span class="text-muted block-display mt-1 font-mono fs-12">per application</span>
+              </div>
+              <ul class="list-unstyled text-muted text-start d-grid gap-3 mb-5 fs-14 flex-grow-1">
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Certified advisor document validation</li>
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Priority slot appointment bookings</li>
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Cover Letter formulation</li>
+                <li><i class="bi bi-check2 text-success me-2 fs-5 align-middle"></i>Schengen-compliant Insurance plan</li>
+              </ul>
+              <a href="booking.html?plan=executive&price=295" class="btn btn-premium-primary w-100 py-3 font-display">Secure Advisor Access</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM NAVIGATION -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+
+    <script>
+      $(function() {
+        // Annual discount pricing cycler
+        $('#pricingCycleToggle').on('change', function() {
+          const isAnnual = $(this).is(':checked');
+          $('.price-display').each(function() {
+            const price = isAnnual ? $(this).data('annual') : $(this).data('single');
+            $(this).fadeOut(150, function() {
+              $(this).text('$' + price).fadeIn(150);
+            });
+          });
+        });
+      });
+    </script>
+  </body>
+</html>

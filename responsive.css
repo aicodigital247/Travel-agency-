@@ -1,0 +1,86 @@
+/* Grand Voyage - Responsive Adjustments & Ultra-Wide screen adaptations */
+
+/* Ultra wide screen overrides */
+@media (min-width: 1400px) {
+  .container, .container-lg, .container-md, .container-sm, .container-xl, .container-xxl {
+    max-width: 1320px;
+  }
+}
+
+@media (min-width: 1800px) {
+  .container {
+    max-width: 1600px;
+  }
+  .display-1 {
+    font-size: 5rem;
+  }
+  .display-2 {
+    font-size: 4.5rem;
+  }
+}
+
+/* Tablet screen customizations */
+@media (max-width: 991.98px) {
+  .glass-card {
+    margin-bottom: 20px;
+  }
+  .search-widget-container {
+    margin-top: -30px !important;
+  }
+  .navbar-nav {
+    padding: 15px 0;
+  }
+}
+
+/* Mobile screen optimization patterns */
+@media (max-width: 767.98px) {
+  body {
+    padding-bottom: 60px; /* offset for sticky bottom navigation */
+  }
+  .display-1 {
+    font-size: 2.5rem;
+  }
+  .display-2 {
+    font-size: 2.2rem;
+  }
+  .display-3 {
+    font-size: 1.8rem;
+  }
+  
+  /* Touch target safety height rules */
+  .btn, .custom-form-control, .nav-link-mobile {
+    min-height: 48px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+  
+  .hero-slide {
+    height: 90vh !important;
+  }
+  
+  /* Adjust margins for tight mobile widths */
+  .px-mobile-sm {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+  }
+  
+  .pricing-card-badge {
+    top: 10px;
+    right: 10px;
+  }
+}
+
+/* Extra small mobile screen adjustments */
+@media (max-width: 480px) {
+  h1 {
+    font-size: 1.8rem !important;
+  }
+  h2 {
+    font-size: 1.5rem !important;
+  }
+  .btn-premium-primary, .btn-premium-outline, .btn-premium-accent {
+    width: 100% !important;
+    margin-bottom: 10px;
+  }
+}

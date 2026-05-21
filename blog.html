@@ -1,0 +1,238 @@
+<!doctype html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Lounge Journals & Travel News - Grand Voyage</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css" rel="stylesheet" />
+    <link rel="stylesheet" href="style.css" />
+    <link rel="stylesheet" href="responsive.css" />
+    <link rel="stylesheet" href="animations.css" />
+  </head>
+  <body>
+
+    <!-- Scroll progress bar -->
+    <div class="scroll-progress-container"><div class="scroll-progress-bar"></div></div>
+
+    <!-- MAIN NAVBAR TERMINAL -->
+    <nav class="navbar navbar-expand-lg navbar-glass-container header-glass sticky-top py-3 w-100">
+      <div class="container">
+        <a class="navbar-brand text-primary d-flex align-items-center gap-2 m-0" href="index.html">
+          <i class="bi bi-globe-americas fs-3 text-warning-emphasis"></i>
+          <span>GRAND <span class="fw-light">VOYAGE</span></span>
+        </a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#grandNavbar"><span class="navbar-toggler-icon"></span></button>
+        <div class="collapse navbar-collapse" id="grandNavbar">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0 gap-1">
+            <li class="nav-item"><a class="nav-link px-3" href="index.html">Home</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="about.html">About</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="visa-services.html">Visas</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="flights.html">Flights</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="hotels.html">Hotels</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="tours.html">Tours</a></li>
+            <li class="nav-item"><a class="nav-link px-3" href="study-abroad.html">Study</a></li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3" href="#" role="button" data-bs-toggle="dropdown">Pages</a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2" href="hajj-umrah.html">Hajj & Umrah</a></li>
+                <li><a class="dropdown-item rounded py-2" href="insurance.html">Insurance</a></li>
+                <li><a class="dropdown-item rounded py-2" href="pricing.html">Pricing Plans</a></li>
+                <li><a class="dropdown-item rounded py-2" href="team.html">Our Experts</a></li>
+                <li><a class="dropdown-item rounded py-2" href="faq.html">FAQs Portal</a></li>
+                <li><a class="dropdown-item rounded py-2" href="gallery.html">Visual Gallery</a></li>
+                <li><a class="dropdown-item rounded py-2" href="testimonials.html">Reviews</a></li>
+                <li><hr class="dropdown-divider"></li>
+                <li><a class="dropdown-item rounded py-2 text-danger" href="error.html">404 Error Page</a></li>
+              </ul>
+            </li>
+            <li class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle px-3 active" href="#" role="button" data-bs-toggle="dropdown">Journals</a>
+              <ul class="dropdown-menu border-0 shadow-lg p-2 m-0">
+                <li><a class="dropdown-item rounded py-2 active" href="blog.html">Lounge News</a></li>
+                <li><a class="dropdown-item rounded py-2" href="blog-details.html">Article Details</a></li>
+              </ul>
+            </li>
+            <li class="nav-item"><a class="nav-link px-3" href="contact.html">Contact</a></li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <select id="global-currency-selector" class="form-select form-select-sm border-0 bg-transparent text-color font-mono" style="width: auto;">
+              <option value="USD" selected>USD ($)</option>
+              <option value="EUR">EUR (€)</option>
+              <option value="GBP">GBP (£)</option>
+            </select>
+            <button class="btn theme-toggle-btn p-2 rounded-circle border-0 text-color">
+              <i class="bi bi-moon-stars-fill theme-toggle-icon"></i>
+            </button>
+            <a href="dashboard.html" class="btn btn-outline-secondary btn-sm px-3 py-2 text-color border-0 font-display">Portal</a>
+            <a href="booking.html" class="btn btn-premium-primary btn-sm px-4">Book Trip</a>
+          </div>
+        </div>
+      </div>
+    </nav>
+
+    <!-- HEADER BANNER -->
+    <header class="py-5 bg-dark text-white text-center animate-gradient-bg">
+      <div class="container py-4">
+        <h1 class="display-2 font-display mb-3">Lounge Journals</h1>
+        <p class="lead max-w-7xl mx-auto opacity-90">Unlocking custom entry requirements, global expat itineraries, and elite travel advice.</p>
+      </div>
+    </header>
+
+    <!-- BLOG SECTION -->
+    <section class="py-5">
+      <div class="container">
+        <!-- Dashboard filters -->
+        <div class="row mb-5 align-items-center">
+          <div class="col-md-6 mb-3 mb-md-0">
+            <div class="btn-group gap-2 flex-wrap" id="blogFilters">
+              <button class="btn btn-premium-link active rounded-pill px-4" data-filter="all">All Journals</button>
+              <button class="btn btn-premium-link rounded-pill px-4" data-filter="visas">Visa Updates</button>
+              <button class="btn btn-premium-link rounded-pill px-4" data-filter="destinations">Destinations</button>
+              <button class="btn btn-premium-link rounded-pill px-4" data-filter="luxury">Luxury Living</button>
+            </div>
+          </div>
+          <div class="col-md-6 col-lg-4 ms-auto">
+            <div class="input-group">
+              <span class="input-group-text bg-transparent border-end-0"><i class="bi bi-search text-muted"></i></span>
+              <input type="text" id="blogSearchInput" class="form-control border-start-0 custom-form-control" placeholder="Search articles...">
+            </div>
+          </div>
+        </div>
+
+        <div class="row g-4" id="blogGrid">
+          <!-- Card 1 -->
+          <div class="col-md-6 col-lg-4 blog-post-card" data-category="visas">
+            <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+              <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1569336415962-a4bd9f69cd83?w=600" class="w-100 obj-cover" style="height:240px;" alt="Schengen Visa" referrerPolicy="no-referrer">
+                <span class="badge bg-primary position-absolute top-0 end-0 m-3 fs-12">VISA RULES</span>
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-2 mb-2 text-muted fs-12">
+                  <span>May 18, 2026</span>
+                  <span>•</span>
+                  <span>5 Min Read</span>
+                </div>
+                <h4 class="display-font leading-sm mb-3"><a href="blog-details.html?id=1" class="text-decoration-none text-color hover-primary">Schengen Area 2026 Expansion & digital updates</a></h4>
+                <p class="text-muted fs-14">Get the complete updates regarding digital passport declarations, fingerprints registration timelines, and biometric entries.</p>
+                <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-circle text-primary fs-5"></i>
+                    <span class="fs-12 text-muted">Dr. Amelia Vance</span>
+                  </div>
+                  <a href="blog-details.html?id=1" class="btn btn-link text-primary p-0 fs-14 text-decoration-none">Read Journal <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 2 -->
+          <div class="col-md-6 col-lg-4 blog-post-card" data-category="destinations">
+            <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+              <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?w=600" class="w-100 obj-cover" style="height:240px;" alt="Sandal Beach" referrerPolicy="no-referrer">
+                <span class="badge bg-success position-absolute top-0 end-0 m-3 fs-12">DESTINATIONS</span>
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-2 mb-2 text-muted fs-12">
+                  <span>May 12, 2026</span>
+                  <span>•</span>
+                  <span>7 Min Read</span>
+                </div>
+                <h4 class="display-font leading-sm mb-3"><a href="blog-details.html?id=2" class="text-decoration-none text-color hover-primary">Top 10 Hidden Island Havens For Digital Nomads</a></h4>
+                <p class="text-muted fs-14">A deep dive into remote workspace sanctuaries offering pristine high-speed cellular routing alongside turquoise lagoons.</p>
+                <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-circle text-primary fs-5"></i>
+                    <span class="fs-12 text-muted">Alistair Sterling</span>
+                  </div>
+                  <a href="blog-details.html?id=2" class="btn btn-link text-primary p-0 fs-14 text-decoration-none">Read Journal <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- Card 3 -->
+          <div class="col-md-6 col-lg-4 blog-post-card" data-category="luxury">
+            <div class="glass-card overflow-hidden h-100 d-flex flex-column">
+              <div class="position-relative">
+                <img src="https://images.unsplash.com/photo-1455587734955-081b22074882?w=600" class="w-100 obj-cover" style="height:240px;" alt="Luxury Hotel" referrerPolicy="no-referrer">
+                <span class="badge bg-warning text-dark position-absolute top-0 end-0 m-3 fs-12">LUXURY LIVING</span>
+              </div>
+              <div class="p-4 d-flex flex-column flex-grow-1">
+                <div class="d-flex align-items-center gap-2 mb-2 text-muted fs-12">
+                  <span>May 05, 2026</span>
+                  <span>•</span>
+                  <span>4 Min Read</span>
+                </div>
+                <h4 class="display-font leading-sm mb-3"><a href="blog-details.html?id=3" class="text-decoration-none text-color hover-primary">The Art of Elite Concierge Yachting Services</a></h4>
+                <p class="text-muted fs-14">A luxury report detailing ultra-private transfers, discrete service teams, and customized sailing pathways.</p>
+                <div class="mt-auto pt-3 border-top d-flex align-items-center justify-content-between">
+                  <div class="d-flex align-items-center gap-2">
+                    <i class="bi bi-person-circle text-primary fs-5"></i>
+                    <span class="fs-12 text-muted">Isabella Thorne</span>
+                  </div>
+                  <a href="blog-details.html?id=3" class="btn btn-link text-primary p-0 fs-14 text-decoration-none">Read Journal <i class="bi bi-arrow-right"></i></a>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer class="premium-footer py-5 text-muted">
+      <div class="container py-4 text-center">
+        <p class="mb-0">&copy; 2026 Grand Voyage Corporation. All rights reserved.</p>
+      </div>
+    </footer>
+
+    <!-- STICKY BOTTOM NAVIGATION -->
+    <div class="mobile-bottom-nav">
+      <a href="index.html" class="mobile-bottom-item"><i class="bi bi-house-door-fill"></i><span>Home</span></a>
+      <a href="visa-services.html" class="mobile-bottom-item"><i class="bi bi-passport-fill"></i><span>Visas</span></a>
+      <a href="flights.html" class="mobile-bottom-item"><i class="bi bi-airplane-fill"></i><span>Flights</span></a>
+      <a href="booking.html" class="mobile-bottom-item"><i class="bi bi-calendar-event-fill"></i><span>Book</span></a>
+      <a href="dashboard.html" class="mobile-bottom-item"><i class="bi bi-person-fill"></i><span>Portal</span></a>
+    </div>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="app.js"></script>
+    <script src="jquery-app.js"></script>
+
+    <script>
+      $(function() {
+        // Handle filter tabs
+        $('#blogFilters button').on('click', function() {
+          $('#blogFilters button').removeClass('active');
+          $(this).addClass('active');
+          const filter = $(this).data('filter');
+          
+          if(filter === 'all') {
+            $('.blog-post-card').fadeIn();
+          } else {
+            $('.blog-post-card').hide();
+            $('.blog-post-card[data-category="' + filter + '"]').fadeIn();
+          }
+        });
+
+        // Live Search article filter
+        $('#blogSearchInput').on('input', function() {
+          const val = $(this).val().toLowerCase();
+          $('.blog-post-card').each(function() {
+            const title = $(this).find('h4').text().toLowerCase();
+            const desc = $(this).find('p').text().toLowerCase();
+            if (title.indexOf(val) > -1 || desc.indexOf(val) > -1) {
+              $(this).fadeIn();
+            } else {
+              $(this).fadeOut();
+            }
+          });
+        });
+      });
+    </script>
+  </body>
+</html>
